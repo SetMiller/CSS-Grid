@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleGridSetup.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="buttons">
+    <div class="button"></div>
+  </div>
+  <div class="wrapper">
+    <header class="header">header</header>
+    <nav class="nav">nav</nav>
+    <main class="main">main</main>
+    <footer class="footer">footer</footer>
+  </div>
+  <script>
+      // const items = document.querySelectorAll('.wrapper .item');
+      const buttons = document.querySelectorAll('.buttons .button');
+      const wrapper = document.querySelector('.wrapper');
+      
+      // [...items].forEach((element, index) => {element.innerHTML += `Item ${index + 1}`});
+      [...buttons].forEach((element, index) => {
+        element.innerHTML = `Example #${index + 1}`
+        element.setAttribute('onclick', `clickBtn(${index + 1})`)
+        });
+
+      function clickBtn(numb){
+        for (i = 0; i < buttons.length; i++){
+          let classToRemove = wrapper.className.split(' ')[i]
+          if (classToRemove !== 'wrapper' && classToRemove !== `example${numb}`) {
+            wrapper.classList.remove(classToRemove)
+          }
+        }
+        
+        // function itemClassClear(item){
+        //   if (item !== 'undefined'){
+        //     for (i = 0; i < items.length; i++){
+        //       let classToRemove = items[i].className.split(' ')
+        //       items[i].className.split(' ').find(value => {
+        //         if (value !== 'item' && value !== item) {
+        //           items[i].classList.remove(value)
+        //         }
+        //       }) 
+        //     }
+        //   }
+        // }
+        wrapper.classList.toggle(`example${numb}`)
+        
+        // switch (numb) {
+        //   case 6:
+        //     itemClassClear('example6-1')
+        //     items[2].classList.toggle(`example6-1`)
+        //     break;
+        //   case 7:
+        //     itemClassClear('example7-1')
+        //     items[0].classList.toggle(`example7-1`)
+        //     break;
+        //   case 8:
+        //     itemClassClear('example8-1')
+        //     items[0].classList.toggle(`example8-1`)
+        //     break;
+        //   default:
+        //     itemClassClear()
+        //     break;
+        // }
+      }
+
+  </script>
+</body>
+</html>
