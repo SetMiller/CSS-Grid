@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Flexbox vs CSS Grid: Variable Widths on Each Row!</title>
+</head>
+
+<body>
+  <div class="flex-container">
+    <div class="item">Short</div>
+    <div class="item">Longerrrrrrrrrrrrrr</div>
+    <div class="item">💩</div>
+    <div class="item">This is Many Words</div>
+    <div class="item">Lorem, ipsum.</div>
+    <div class="item">10</div>
+    <div class="item">Snickers</div>
+    <div class="item">Wes Is Cool</div>
+    <div class="item">Short</div>
+  </div>
+  <style>
+    /* flexbox следует использовать когда по сетке строить будет сложно */
+    /* например когда элементы разной рандомной ширины */
+    /* и при этом их может быть разное количество */
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid black;
+      max-width: 750px;
+    }
+    .flex-container>* {
+      /* min-width: 15%; */
+      margin: 10px;
+      flex:1
+    }
+  </style>
+</body>
+
+</html>

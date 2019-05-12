@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Flexbox vs CSS Grid: Flex on Item!</title>
+</head>
+
+<body>
+  <!-- The Longer Item in the middle -->
+  <div class="controls">
+    <button>⏯️</button>
+    <!-- <button>🐢</button> -->
+    <button>🐰</button>
+    <div class="scrubber"></div>
+    <button>💬</button>
+    <button>🔽</button>
+  </div>
+
+  <div class="controls2">
+      <button>⏯️</button>
+      <!-- <button>🐢</button> -->
+      <button>🐰</button>
+      <div class="scrubber2"></div>
+      <button>💬</button>
+      <button>🔽</button>
+    </div>
+
+  <style>
+    /* ________ Вариант на css Grid _________ */
+    /* минус, если удалить одну из кнопок, то придется переписывать разметку */
+    .controls {
+      margin: 200px 0;
+      display: grid;
+      /* grid-template-columns: repeat(3, fit-content(30px)) 1fr repeat(2, fit-content(30px)); */
+      grid-template-columns: repeat(3, auto) 1fr repeat(2, auto);
+      /* grid-gap: 5px; */
+      align-items: center;
+    }
+    .scrubber {
+      background: #BADA55;
+      height: 10px;
+      min-width: 100px;
+      border-radius: 10px;
+    }
+
+    /* ________ Вариант на flexbox _________ */
+    .controls2 {
+      margin: 200px 0;
+      display: flex;
+      align-items: center;
+    }
+    .scrubber2 {
+      background: #BADA55;
+      height: 10px;
+      min-width: 100px;
+      border-radius: 10px;
+      flex: 1;
+    }
+
+
+  </style>
+
+</body>
+
+</html>
