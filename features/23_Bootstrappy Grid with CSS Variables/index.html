@@ -6,20 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bootstrappy Grid with CSS Variables!</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <div class="grid">
+<!-- странная вещь !!!!!!!!!! -->
+  <div class="grid" style="--span: 10;">
     <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">3</div>
+    <div class="item" style="--span: 2;">21qweqweqwe</div>
+    <div class="item" style="--span: 7;">
+      
+      <div class="grid" style="--cols: 2;">
+        <div class="item">22</div>
+        <div class="item">33</div>
+      </div>
+
+    </div>
     <div class="item">4</div>
   </div>
 
   <style>
-    .grid {}
+    .grid {
+      display: grid;
+      /* если уберем параметр из стиля, то применится значение по-умолчанию */
+      grid-template-columns: repeat(var(--span, 12), minmax(0, 1fr));
+      grid-gap: 20px;
+    }
+
+    .item {
+      /* min-width: 0; */
+      --span: 1;
+      grid-column: span var(--span);
+    }
   </style>
 
 </body>

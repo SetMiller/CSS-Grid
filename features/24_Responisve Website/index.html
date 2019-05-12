@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/style.css">
-  <link rel="stylesheet" href="./responsive-START.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
   <title>Responsive Website!</title>
 </head>
 
@@ -76,7 +76,7 @@
     </section>
 
     <section class="about">
-      <img src="images/queso-taco.png" alt="Yummy Taco" class="about__mockup">
+      <img src="img/queso-taco.png" alt="Yummy Taco" class="about__mockup">
       <div class="about__details">
         <h2>Featured Taco</h2>
         <p>Slim Profile, easy to hold and loaded with cheese.</p>
@@ -102,6 +102,14 @@
   </div>
 
   <script>
+    const navBtn = document.querySelector('button[aria-expanded]');
+    function toggleNav({target}){
+      // меняем тип данных с string на boolean 🔥🔥🔥🔥
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navBtn.setAttribute('aria-expanded', !expanded);
+      // console.log(typeof(expanded))
+    }
+    navBtn.addEventListener('click', toggleNav);
   </script>
   
 </body>
