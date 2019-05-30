@@ -118,7 +118,7 @@
       and idle hands build nothing that you can call your own.</p>
 
     <blockquote>
-      <p>— Levi The Poet</p>
+      <p>— Levi The Poet —</p>
     </blockquote>
 
   </article>
@@ -130,7 +130,7 @@
     html {
       color: #444;
       font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
-      font-size: 20px;
+      font-size: 16px;
     }
     p {
       line-height: 1.8;
@@ -149,6 +149,64 @@
       font-weight: 100;
       margin: 0;
     }
+
+    .post {
+      display: grid;
+      max-width: 1000px;
+      margin: 200px auto;
+      grid-template-columns: 3fr 12fr 5fr;
+      grid-gap: 10px 50px;
+    }
+    .post > * {
+      /* чтобы посты занимали свободное пространство ячеек */
+      grid-column: 2 / -2
+    }
+
+    .post > figure {
+      margin: 0;
+      grid-column: 1 / -1
+    }
+    .figcaption {
+      font-size: 10px;
+    }
+    .post > blockquote {
+      grid-column: 1 / -1;
+      font-size: 60px;
+      text-align: center;
+      margin: 0;
+    }
+
+    .tip {
+      /* background: wheat; */
+      padding: 10px;
+      
+      /*🔥🔥🔥🔥 Если слишком много текста и элемент растягивает по вертикали 🔥🔥🔥🔥🔥*/
+      /* grid-row: span 5; */
+
+      /*🔥🔥🔥🔥 чтобы вертикальная полоса не вылезала дальше текста 🔥🔥🔥🔥*/
+      /* align-self: start; */
+      
+    }
+    .tip-left {
+      grid-column: 1 / span 1;
+      text-align: right;
+      border-right: 2px solid var(--yellow);
+    }
+    
+    .tip > p:before {
+      content: 'Note: ';
+      font-style: italic;
+      font-weight: 600;
+    }
+    .tip-right {
+      grid-column: span 1 / -1;
+      border-left: 2px solid var(--yellow);
+    }
+    .tip-right:nth-last-of-type(1){
+      grid-row: span 5;
+      align-self: start;
+    }
+
   </style>
 
 </body>

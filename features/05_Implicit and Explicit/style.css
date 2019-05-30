@@ -29,14 +29,10 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-  -webkit-transition:all .7s ease;
-         -moz-transition:all .7s ease;
-               -o-transition:all .7s ease;
-                     transition:all .7s ease;
 }
 
 body {
-  max-width: 1140px;
+  max-width: 500px;
   background: linear-gradient(110deg, #FE938C, #4281A4);
   /* background-size: 340px, auto; */
   min-height: calc(100vh - 100px);
@@ -54,11 +50,11 @@ h6 {
   margin: 0 0 5px 0;
 }
 /* Each item in our grid will contain numbers */
+/* We center the contents of these items. You can also do this with flexbox too! */
 .item {
-  /* We center the contents of these items. You can also do this with flexbox too! */
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  /* display: grid; */
+  /* justify-content: center; */
+  /* align-items: center; */
   border: 5px solid rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   font-size: 30px;
